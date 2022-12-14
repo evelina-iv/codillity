@@ -14,24 +14,15 @@ Write an efficient algorithm for the following assumptions:
 N is an integer within the range [1..2,147,483,647].'''
 
 def solution(N):
-    bin(N)
-    b = a.count("01")
+    N = bin(N)[2:] # 2: is used to remove the first 2 characters as they are 0b
     x = 0
     y = 0
-    ls = []
-    lst = []
-    for i in a:
-        lst.append(i)
-        if lst[y] == '0':
-            y+=1
+    for k in N:
+        if int(k)==0:
+            x+=1
         else:
-            if i == '0':
-                x+=1
-            else:
-                ls.append(x)
-                x = 0
-    ls.sort(reverse=True)
-    print(ls[0])
+            y = max(x,y)
+            x = 0 
+    return y
 
-            
-            
+print(solution(20))
