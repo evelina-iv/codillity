@@ -22,26 +22,6 @@ the elements of A are all distinct;
 each element of array A is an integer within the range [1..(N + 1)].'''
 
 
-
-'''def solution(A):
-    A.sort(reverse=False)
-    for i in range (len(A)):
-        if A[i]+1 == A[i+1]:
-            A.remove(A[i])
-        else:
-            return A[i]+1 
-print(solution([2, 3, 1, 5]))'''
-#10% poorly done bellow i tried other way 
-
-'''def solution(A):
-    A.sort(reverse=False)
-    ls = []
-    for i in range (A[0],A[-1]+1):
-        ls.append(i)
-    for b in A:
-        ls.remove(b)
-    return ls[0]
-print(solution([2, 3, 1, 5]))'''
 def solution(A):
     if len(A) == 0:
         return 1
