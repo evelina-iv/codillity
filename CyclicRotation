@@ -34,23 +34,9 @@ N and K are integers within the range [0..100];
 each element of array A is an integer within the range [−1,000..1,000].'''
 
 def solution(A, K):
-    if K > len(A):
-       K = K%len(A)
-    ls = A[-K:]+A[:-K]
-    return ls
-print(solution([3, 8, 9, 7, 6], 3))
-#87% not working for empty array!!!
-
-
-'''
-def solution(A, K):
-    x = 0
-    if K > len(A):
-        K= K%len(A)
-    for i in range(1,K):
-        A.insert(0,A[-i])
-        A.pop(-i)
-    return A
-        
-solution([1,2,3], 1)
-print(solution([3, 8, 9, 7, 6], 3))'''
+    N = len(A)
+    B = [None]*N # without None only empty list
+    for i in range(0,N):
+        B[(i+K)%N]=A[i]
+    return B
+#100%
