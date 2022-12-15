@@ -39,7 +39,25 @@ N is an integer within the range [1..100,000];
 each element of array A is an integer that can have one of the following values: 0, 1.
 '''
 
-
+def solution(A):
+    z = 0
+    o = 0
+    for i in A:
+        if i == 0:
+            z +=1
+        else:
+            o+=z
+    if o =< 1000000000:
+        return b
+    else:
+        return -1
+    
+    # GOOD VALUTION. What we do here is that if the value is 01011 the first 1 has only one zero before it and the other has 2 so we add the number of 0 before every 1 and thats's how we solve it
+    #100%
+    
+    
+    
+'''    
 def solution(A):
     b = 0
     for i in range(0,len(A)):
@@ -55,4 +73,4 @@ def solution(A):
     
 solution([1,1,0,1,0,1,1])
 
-# 50% It worked but didn't pass the time tests 
+# 50% It worked but didn't pass the time tests '''
