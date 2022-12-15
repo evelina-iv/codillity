@@ -41,7 +41,22 @@ Write an efficient algorithm for the following assumptions:
 
 N is an integer within the range [1..100,000];
 each element of array A is an integer within the range [1..1,000,000,000].'''
+
+
+
 def solution(A):
+    A.sort()
+    if len(A) == 0:
+        return 0 
+    A.sort()
+    for i in range(0,len(A)):
+        if A[i] != i+1:
+            return 0
+    return 1
+    pass
+
+
+'''def solution(A):
     a = max(A)
     for i in A:
         if len(A) == a and A.count(i) == 1:
@@ -51,7 +66,7 @@ def solution(A):
     return 1
     pass
 #83%    
-# Same as
+# Same as'''
 '''
 def solution(A):
     a = max(A)
