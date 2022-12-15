@@ -40,7 +40,7 @@ Write an efficient algorithm for the following assumptions:
 N and X are integers within the range [1..100,000];
 each element of array A is an integer within the range [1..X].'''
 
-def solution(X, A):
+'''def solution(X, A):
     position = 0
     max = 0
     for i in range(1,X+1):
@@ -52,3 +52,17 @@ def solution(X, A):
         
     return max
 print(solution(5, [1,3,1,4,2,3,5,4]))
+#54%'''
+
+def solution(X, A):
+    B = [-1] * (X)
+    for i in range(0,len(A)):
+        if (A[i] <= X and B[A[i]-1]  == -1):
+            B[A[i]-1]  = i
+    m = 0
+    for i in range(0,len(B)):
+        if B[i]==-1:
+            return -1
+        m = max[m,B[i]]
+    return m
+print(solution(5,[1,3,1,4,2,3,5,4]))
