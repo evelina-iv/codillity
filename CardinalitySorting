@@ -1,11 +1,13 @@
 def solution(A):
     ls = []
+    key = []
     for i in A:
         x = str(bin(i)[2:])
         x = x.count('1')
         ls.append(x)
     d = dict(zip(A, ls))
-    dict(sorted(d.items(), key=lambda item: item[1]))
-    return d
-print(solution([1,2,3,4]))
-        
+    sbv = {k:v for k, v in sorted(d.items(), key= lambda v: v[1])}
+    for b in sbv:
+        key.append(b)
+    return key
+print(solution([1,2,3,3,4]))
