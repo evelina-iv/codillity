@@ -43,6 +43,7 @@ each element of array A is an integer within the range [1..X].'''
 '''def solution(X, A):
     position = 0
     max = 0
+    ls = []
     for i in range(1,X+1):
         if A.count(i) == 0:
             return -1

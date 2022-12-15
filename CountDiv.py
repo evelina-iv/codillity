@@ -14,7 +14,7 @@ A and B are integers within the range [0..2,000,000,000];
 K is an integer within the range [1..2,000,000,000];
 A ≤ B.'''
 
-def solution(A, B, K):
+'''def solution(A, B, K):
     if K > B:
         return 0
     c = B//K
@@ -22,4 +22,10 @@ def solution(A, B, K):
     e = c-d
     return e
 solution(0, 0, 11)
-#86%
+#86%'''
+
+def solution(A, B, K):
+    return (B // K - (A-1) // K)
+solution(0, 0, 11)
+#100%
+# The only difference if that i state that if K should be less than B the answer is 0 but is 1 because i is between A and B 
